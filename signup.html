@@ -14,6 +14,12 @@
             background: white url(preloader.gif) no-repeat center;
             z-index: 999;
         }
+        body{
+            background-image: url(signupbg.gif);
+            background-clip: padding-box;
+            background-size: inherit;
+            background-repeat: no-repeat;
+        }
         .ft-jumbotron{
           background-color: #1a1a1a;
           color: #f2f2f2;
@@ -36,7 +42,7 @@
     <!-- HEADER -->
     <nav class="navbar navbar-dark bg-dark" id="heading">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="index.html">
             <span style="font-size: 24px; padding-right: 1%;">Programming Hub</span>
             <small class="text-secondary" style="border: solid gray 1px; padding: 2px; font-size: 10px; border-radius: 3px;">We provide the best and free Programming tutorials</small>
           </a>
@@ -63,56 +69,56 @@
             <div class="row">
                 <div class="col">
                   <label class="form-label">First-Name:</label>
-                  <input type="text" class="form-control" placeholder="Enter First name" aria-label="First name">
+                  <input id="fname" type="text" class="form-control" placeholder="Enter First name" aria-label="First name">
                 </div>
                 <div class="col">
                   <label class="form-label">Last-Name:</label>
-                  <input type="text" class="form-control" placeholder="Enter Last name" aria-label="Last name">
+                  <input id="lname" type="text" class="form-control" placeholder="Enter Last name" aria-label="Last name">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                   <label class="form-label">Email:</label>
-                  <input type="email" class="form-control" placeholder="123@example.com" aria-label="Email">
+                  <input id="email" type="email" class="form-control" placeholder="123@example.com" aria-label="Email">
                 </div>
                 <div class="col">
                   <label class="form-label">Contact:</label>
-                  <input type="text" class="form-control" placeholder="Enter Contact Number" aria-label="Contact">
+                  <input id="contact" type="text" class="form-control" placeholder="Enter Contact Number" aria-label="Contact">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                   <label class="form-label">Password:</label>
-                  <input type="password" class="form-control" placeholder="Enter Password" aria-label="Password">
+                  <input id="password" type="password" class="form-control" placeholder="Enter Password" aria-label="Password">
                 </div>
                 <div class="col">
                   <label class="form-label">Confirmed Password:</label>
-                  <input type="password" class="form-control" placeholder="Enter Confirmed Password" aria-label="Confirm Password">
+                  <input id="cpassword" type="password" class="form-control" placeholder="Enter Confirmed Password" aria-label="Confirm Password">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                   <label class="form-label">Username:</label>
-                  <input type="text" class="form-control" placeholder="Enter Username" aria-label="Username">
+                  <input id="username" type="text" class="form-control" placeholder="Enter Username" aria-label="Username">
                 </div>
                 <div class="col">
                   <label class="form-label">Gender:</label><br>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input checked class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="Male">
                     <label class="form-check-label" for="inlineRadio1">
                         <img src="maleicon.png" style="height: 22px; width: 22px;" alt="male">
                         Male
                     </label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="Female">
                     <label class="form-check-label" for="inlineRadio2">
                         <img src="femaleicon.png" style="height: 22px; width: 22px;" alt="femaleicon.png">
                         Female
                     </label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other" value="Other">
                     <label class="form-check-label" for="inlineRadio2">
                         <img src="othergender.png" style="height: 22px; width: 22px;" alt="othergender.png">
                         Other
@@ -124,6 +130,7 @@
                 <div class="col">
                   <label class="form-label">Country:</label>    
                     <select id="country" name="country" class="form-control">
+                        <option value=" " class="text-secondary">Choose Country</option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
                         <option value="Albania">Albania</option>
@@ -372,25 +379,26 @@
                 </div>
                 <div class="col">
                     <label class="form-label">Course:</label>    
-                      <select id="country" name="country" class="form-control">
-                          <option value="Web Development">Web Development</option>
-                          <option value="Desktop Development">Desktop Development</option>
-                          <option value="Mobile App Development">Mobile App Development</option>
-                          <option value="Software Testing">Software Testing</option>
-                          <option value="Videogame Development">Videogame Development</option>
-                          <option value="Internet of Things">Internet of Things</option>
-                          <option value="Cybersecurity">Cybersecurity</option>
+                      <select id="course" class="form-control" >
+                            <option value=" " class="text-secondary">Choose Course</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Desktop Development">Desktop Development</option>
+                            <option value="Mobile App Development">Mobile App Development</option>
+                            <option value="Software Testing">Software Testing</option>
+                            <option value="Videogame Development">Videogame Development</option>
+                            <option value="Internet of Things">Internet of Things</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
                       </select>
                   </div>
             </div>
             <div style="padding-left: 5%;" class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="" id="checkbox">
                 <label class="form-check-label" for="defaultCheck1">
                   By checking this, you will agree with our <a href="#">terms & conditions</a>.
                 </label>
               </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary" onclick="submit">Sign in</button>
             </div>
             <small style="padding-left: 2%;">
                 Already a member? <a href="#">Sign in</a>
@@ -434,7 +442,7 @@
                 </svg>
               </i>
             </a>
-            <a href="https://github.com/iamzaidsoomro" style="color: currentColor;">
+            <a href="https://github.com/iamzaidsoomro/Programming-Hub.git" style="color: currentColor;">
               <i class="bi bi-github" style="padding-left: 1%;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                   <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
