@@ -70,26 +70,46 @@
                 <div class="col">
                   <label class="form-label">First-Name:</label>
                   <input id="fname" type="text" class="form-control" placeholder="Enter First name" aria-label="First name">
+                  <div style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Field can't be empty!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
                 </div>
                 <div class="col">
                   <label class="form-label">Last-Name:</label>
                   <input id="lname" type="text" class="form-control" placeholder="Enter Last name" aria-label="Last name">
+                  <div style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Field can't be empty!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                   <label class="form-label">Email:</label>
                   <input id="email" type="email" class="form-control" placeholder="123@example.com" aria-label="Email">
+                  <div style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Field can't be empty!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
                 </div>
                 <div class="col">
                   <label class="form-label">Contact:</label>
                   <input id="contact" type="text" class="form-control" placeholder="Enter Contact Number" aria-label="Contact">
+                  <div style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Field can't be empty!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                   <label class="form-label">Password:</label>
                   <input id="password" type="password" class="form-control" placeholder="Enter Password" aria-label="Password">
+                  <div style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Field can't be empty!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
                 </div>
                 <div class="col">
                   <label class="form-label">Confirmed Password:</label>
@@ -100,6 +120,10 @@
                 <div class="col">
                   <label class="form-label">Username:</label>
                   <input id="username" type="text" class="form-control" placeholder="Enter Username" aria-label="Username">
+                  <div style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Field can't be empty!</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
                 </div>
                 <div class="col">
                   <label class="form-label">Gender:</label><br>
@@ -376,6 +400,10 @@
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
+                    <div style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Field can't be empty!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 </div>
                 <div class="col">
                     <label class="form-label">Course:</label>    
@@ -389,16 +417,20 @@
                             <option value="Internet of Things">Internet of Things</option>
                             <option value="Cybersecurity">Cybersecurity</option>
                       </select>
-                  </div>
+                      <div style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Field can't be empty!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                </div>
             </div>
             <div style="padding-left: 5%;" class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkbox">
+                <input class="form-check-input" type="checkbox" value="check" id="checkbox" onchange="check()">
                 <label class="form-check-label" for="defaultCheck1">
                   By checking this, you will agree with our <a href="#">terms & conditions</a>.
                 </label>
               </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-primary" onclick="submit">Sign in</button>
+                <button type="submit" class="btn btn-primary" disabled onclick="submit()" id="submit">Sign in</button>
             </div>
             <small style="padding-left: 2%;">
                 Already a member? <a href="#">Sign in</a>
