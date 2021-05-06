@@ -40,6 +40,27 @@
             font-size: 9px;
             display: none;
         }
+        .input-group{
+          width: 70%;
+        }
+        .icon{
+          padding-left: 10px;
+          padding-right: 9px;
+          background-color: #f2f2f2;
+          border: 1px solid #ced4da;
+        }
+        .icon:hover{
+          padding-left: 10px;
+          padding-right: 9px;
+          background-color: #fff;
+          border: 1px solid #ced4da;
+        }
+        .icon:active{
+          padding-left: 10px;
+          padding-right: 9px;
+          background-color: #f2f2f2;
+          border: 1px solid #ced4da;
+        }
     </style>
   </head>
   <body onload="pldisp()">
@@ -90,12 +111,20 @@
                 <label for="age" class="form-label">Age:</label>
                 <input id="age" class="form-control" style="width: 70%;" type="number" placeholder="Enter Age">
                 <div class="text-danger" id="ageemp" style="display: none;"><small>Field can't be empty</small></div>
+                <div class="text-danger" id="ageinvalid" style="display: none;"><small>Age can't be zero or less than zero</small></div>
                 <label for="password" class="form-label">Password:</label>
-                <input id="password" class="form-control" style="width: 70%;" type="password" placeholder="Enter Password">
+                <div class="input-group">
+                  <input class="password form-control" id="password" type="password" placeholder="Enter Password">
+                  <image id="icon" class="icon" src="eye-fill.svg"></image>
+                </div>
                 <div class="text-danger" id="passwordemp" style="display: none;"><small>Field can't be empty</small></div>
                 <label for="confirmpassword" class="form-label">Confirm Password:</label>
-                <input id="cpassword" class="form-control" style="width: 70%;" type="password" placeholder="Enter Password">
-                <div class="text-danger" id="cpasswordemp" style="display: none;"><small>Field can't be empty</small></div>
+                <div class="input-group">  
+                  <input id="cpassword" class="form-control" style="width: 70%;" type="password" placeholder="Enter Password">
+                  <image id="cicon" onclick="viewcpass()" class="icon" src="eye-fill.svg"></image>
+                </div>
+                  <div class="text-danger" id="cpasswordemp" style="display: none;"><small>Field can't be empty</small></div>
+                <div class="text-danger" id="cpasswordinvalid" style="display: none;"><small>Passwords do not match</small></div>
                 <br>
                 <label>Gender:</label>
                 <input checked type="radio" name="gender" value="Male">
@@ -376,7 +405,7 @@
                 <div class="text-danger" id="courseemp" style="display: none;"><small>Field can't be empty</small></div>
                 <br>
                 <input type="checkbox" id="checkbox">
-                <small>By signing up, you will agree with our <a href="LICENSE">Terms and conditions</a> </small>
+                <small>By signing up, you will agree with our <a href="LICENSE.txt">Terms and conditions</a> </small>
                 <br><br>
                 <a id="sublink" href="#">
                   <input type="submit" class="btn btn-primary btn-md" value="Sign up" onclick="submit()" disabled id="submit">
@@ -432,9 +461,15 @@
                 condition = true;
             }
             if(document.getElementById('age').value == ''){
+                document.getElementById('ageinvalid').style.display='none';
                 document.getElementById('ageemp').style.display='inherit';
                 condition = false;
+            } else if(document.getElementById('age').value<=0){
+              document.getElementById('ageinvalid').style.display='inherit';
+              document.getElementById('ageemp').style.display='none';
+              condition = false;
             } else{
+                document.getElementById('ageinvalid').style.display='none';
                 document.getElementById('ageemp').style.display='none';
                 condition = true;
             }
@@ -447,8 +482,14 @@
             }
             if(document.getElementById('cpassword').value == ''){
                 document.getElementById('cpasswordemp').style.display='inherit';
+                document.getElementById('cpasswordinvalid').style.display='none';
                 condition = false;
+            } else if(document.getElementById('password').value != document.getElementById('cpassword').value){
+              document.getElementById('cpasswordemp').style.display='none';
+              document.getElementById('cpasswordinvalid').style.display='inherit';
+              condition = false;
             } else{
+              document.getElementById('cpasswordinvalid').style.display='none';
                 document.getElementById('cpasswordemp').style.display='none';
                 condition = true;
             }
@@ -473,6 +514,27 @@
               document.getElementById('sublink').href="index.html";
               return condition;
             }
+        }
+        document.getElementById('icon').onclick=viewpass;
+        function viewpass(){
+          var temp = document.getElementById('password');
+          if(temp.type=='password'){
+            document.getElementById('icon').src="eye-slash-fill.svg";
+            temp.type='text';
+          }else{
+            document.getElementById('icon').src="eye-fill.svg";
+            temp.type='password';
+          }
+        }
+        function viewcpass(){
+          var temp = document.getElementById('cpassword');
+          if(temp.type=='password'){
+            document.getElementById('cicon').src="eye-slash-fill.svg";
+            temp.type='text';
+          }else{
+            document.getElementById('cicon').src="eye-fill.svg";
+            temp.type='password';
+          }
         }
     </script>
     <br><br>
