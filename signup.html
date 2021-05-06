@@ -11,11 +11,11 @@
             width: 100%;
             height: 100vh;
             position: fixed;
-            background: white url(preloader.gif) no-repeat center;
+            background: white url(https://github.com/iamzaidsoomro/Programming-Hub/blob/main/preloader.gif?raw=true) no-repeat center;
             z-index: 999;
         }
         body{
-            background-image: url(signupbg.gif);
+            background-image: url(https://github.com/iamzaidsoomro/Programming-Hub/blob/main/signupbg.gif?raw=true);
             background-clip: padding-box;
             background-size: cover;
             background-repeat: no-repeat;
@@ -115,13 +115,13 @@
                 <label for="password" class="form-label">Password:</label>
                 <div class="input-group">
                   <input class="password form-control" id="password" type="password" placeholder="Enter Password">
-                  <image id="icon" class="icon" src="eye-fill.svg"></image>
+                  <image id="icon" class="icon" src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true"></image>
                 </div>
                 <div class="text-danger" id="passwordemp" style="display: none;"><small>Field can't be empty</small></div>
                 <label for="confirmpassword" class="form-label">Confirm Password:</label>
                 <div class="input-group">  
                   <input id="cpassword" class="form-control" style="width: 70%;" type="password" placeholder="Enter Password">
-                  <image id="cicon" onclick="viewcpass()" class="icon" src="eye-fill.svg"></image>
+                  <image id="cicon" onclick="viewcpass()" class="icon" src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true"></image>
                 </div>
                   <div class="text-danger" id="cpasswordemp" style="display: none;"><small>Field can't be empty</small></div>
                 <div class="text-danger" id="cpasswordinvalid" style="display: none;"><small>Passwords do not match</small></div>
@@ -129,17 +129,17 @@
                 <label>Gender:</label>
                 <input checked type="radio" name="gender" value="Male">
                 <label for="male">
-                    <img src="maleicon.png" alt="Maleicon" style="height: 18px; width: 18px;">
+                    <img src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/maleicon.png?raw=true" alt="Maleicon" style="height: 18px; width: 18px;">
                     Male
                 </label>
                 <input type="radio" name="gender" value="Female">
                 <label for="female">
-                    <img src="femaleicon.png" alt="Maleicon" style="height: 18px; width: 18px;">
+                    <img src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/femaleicon.png?raw=true" alt="Maleicon" style="height: 18px; width: 18px;">
                     Female
                 </label>
                 <input type="radio" name="gender" value="Other">
                 <label for="Other">
-                    <img src="othergender.png" alt="Maleicon" style="height: 18px; width: 18px;">    
+                    <img src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/othergender.png?raw=true" alt="Maleicon" style="height: 18px; width: 18px;">    
                     Other
                 </label><br><br>
                 <label for="country" class="form-label">Country:</label>
@@ -405,7 +405,7 @@
                 <div class="text-danger" id="courseemp" style="display: none;"><small>Field can't be empty</small></div>
                 <br>
                 <input type="checkbox" id="checkbox">
-                <small>By signing up, you will agree with our <a href="LICENSE.txt">Terms and conditions</a> </small>
+                <small>By signing up, you will agree with our <a href="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/LICENSE.txt?raw=true">Terms and conditions</a> </small>
                 <br><br>
                 <a id="sublink" href="#">
                   <input type="submit" class="btn btn-primary btn-md" value="Sign up" onclick="submit()" disabled id="submit">
@@ -519,20 +519,20 @@
         function viewpass(){
           var temp = document.getElementById('password');
           if(temp.type=='password'){
-            document.getElementById('icon').src="eye-slash-fill.svg";
+            document.getElementById('icon').src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-slash-fill.svg?raw=true";
             temp.type='text';
           }else{
-            document.getElementById('icon').src="eye-fill.svg";
+            document.getElementById('icon').src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true";
             temp.type='password';
           }
         }
         function viewcpass(){
           var temp = document.getElementById('cpassword');
           if(temp.type=='password'){
-            document.getElementById('cicon').src="eye-slash-fill.svg";
+            document.getElementById('cicon').src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-slash-fill.svg?raw=true";
             temp.type='text';
           }else{
-            document.getElementById('cicon').src="eye-fill.svg";
+            document.getElementById('cicon').src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true";
             temp.type='password';
           }
         }
