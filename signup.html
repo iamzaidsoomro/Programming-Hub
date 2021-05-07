@@ -102,6 +102,7 @@
                 <label for="email" class="form-label">Email:</label>
                 <input id="email" class="form-control" style="width: 70%;" type="email" placeholder="Enter Email">
                 <div class="text-danger" id="emailemp" style="display: none;"><small>Field can't be empty</small></div>
+                <div class="text-danger" id="emailinvalid" style="display: none;"><small>Invalid Email</small></div>
                 <label for="contact" class="form-label">Contact:</label>
                 <input id="contact" class="form-control" style="width: 70%;" type="text" placeholder="Enter Contact">
                 <div class="text-danger" id="contactemp" style="display: none;"><small>Field can't be empty</small></div>
@@ -405,7 +406,7 @@
                 <div class="text-danger" id="courseemp" style="display: none;"><small>Field can't be empty</small></div>
                 <br>
                 <input type="checkbox" id="checkbox">
-                <small>By signing up, you will agree with our <a href="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/LICENSE.txt?raw=true">Terms and conditions</a> </small>
+                <small>By signing up, you will agree with our <a href="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/LICENSE.txt?raw=true">Terms and conditions</a></small>
                 <br><br>
                 <a id="sublink" href="#">
                   <input type="submit" class="btn btn-primary btn-md" value="Sign up" onclick="submit()" disabled id="submit">
@@ -424,41 +425,48 @@
             }
         }
         function submit(){
+          var count=0;
           var condtion = true;
             if(document.getElementById('fname').value == ''){
                 document.getElementById('fnameemp').style.display='inherit';
                 condition = false;
             } else{
                 document.getElementById('fnameemp').style.display='none';
-                condition = true;
             }
             if(document.getElementById('lname').value == ''){
                 document.getElementById('lnameemp').style.display='inherit';
                 condition = false;
             } else{
                 document.getElementById('lnameemp').style.display='none';
-                condition = true;
             }
             if(document.getElementById('email').value == ''){
                 document.getElementById('emailemp').style.display='inherit';
                 condition = false;
             } else{
                 document.getElementById('emailemp').style.display='none';
-                condition = true;
+                for(var i=0; i<100; i++){
+                  if(document.getElementById('email').value[i]=='@'){
+                    count++;
+                  }
+                }
+                if(count>0&&count<2){
+                  document.getElementById('emailinvalid').style.display='none';
+                } else{
+                  document.getElementById('emailinvalid').style.display='inherit';
+                }
+                console.log(count);
             }
             if(document.getElementById('contact').value == ''){
                 document.getElementById('contactemp').style.display='inherit';
                 condition = false;
             } else{
                 document.getElementById('contactemp').style.display='none';
-                condition = true;
             }
             if(document.getElementById('username').value == ''){
                 document.getElementById('usernameemp').style.display='inherit';
                 condition = false;
             } else{
                 document.getElementById('usernameemp').style.display='none';
-                condition = true;
             }
             if(document.getElementById('age').value == ''){
                 document.getElementById('ageinvalid').style.display='none';
@@ -471,14 +479,12 @@
             } else{
                 document.getElementById('ageinvalid').style.display='none';
                 document.getElementById('ageemp').style.display='none';
-                condition = true;
             }
             if(document.getElementById('password').value == ''){
                 document.getElementById('passwordemp').style.display='inherit';
                 condition = false;
             } else{
                 document.getElementById('passwordemp').style.display='none';
-                condition = true;
             }
             if(document.getElementById('cpassword').value == ''){
                 document.getElementById('cpasswordemp').style.display='inherit';
@@ -491,21 +497,23 @@
             } else{
               document.getElementById('cpasswordinvalid').style.display='none';
                 document.getElementById('cpasswordemp').style.display='none';
-                condition = true;
             }
             if(document.getElementById('country').value == ' '){
                 document.getElementById('countryemp').style.display='inherit';
                 condition = false;
             } else{
                 document.getElementById('countryemp').style.display='none';
-                condition = true;
             }
             if(document.getElementById('course').value == ' '){
                 document.getElementById('courseemp').style.display='inherit';
                 condition = false;
             } else{
                 document.getElementById('courseemp').style.display='none';
-                condition = true;
+            }
+            if(document.getElementById('fname').value==''||document.getElementById('lname').value==''||document.getElementById('email').value==''||document.getElementById('contact').value==''||document.getElementById('username').value==''||document.getElementById('age').value==''||document.getElementById('password').value==''||document.getElementById('cpassword').value==''||document.getElementById('country').value==' '||document.getElementById('course').value==' '||count!=1||document.getElementById('password').value!=document.getElementById('cpassword').value){
+              condtion=false;
+            } else{
+              condition=true;
             }
             if(condition == false){
               document.getElementById('sublink').href="#";
