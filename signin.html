@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/logo.png?raw=true">
+    <title>Programming Hub</title>
+    <style>
+        #hlink{
+            text-align: end;
+        }
+        #hlink:hover{
+            text-decoration: none;
+        }
+        .input-group{
+          width: 70%;
+        }
+        .icon{
+          padding-left: 10px;
+          padding-right: 9px;
+          background-color: #f2f2f2;
+          border: 1px solid #ced4da;
+        }
+        .icon:hover{
+          padding-left: 10px;
+          padding-right: 9px;
+          background-color: #fff;
+          border: 1px solid #ced4da;
+        }
+        .icon:active{
+          padding-left: 10px;
+          padding-right: 9px;
+          background-color: #f2f2f2;
+          border: 1px solid #ced4da;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <div>
+        <img src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/logo.png?raw=true" alt="Logo" width="30" height="24" class="d-inline-block align-text-top logo">
+        <a href="index.html"><span class="navbar-brand mb-0 h1">Programming Hub</span></a>
+    </nav>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup.html">Sign Up</a>
+        </li>
+    </ul>
+    <div class="container form-control" style="width: 50%;">
+      <h1 class="text-primary" style="text-align:center;">Sign In</h1>
+      <form action="post" style="padding: 8%; padding-left: 25%;">
+          <label for="email" class="form-label">Email:</label>
+          <input style="width:70%;" class="form-control" type="email" id="email" placeholder="Enter Email">
+          <label for="password">Password:</label>
+          <div class="input-group">
+            <input class="password form-control" id="password" type="password" placeholder="Enter Password">
+            <image id="icon" class="icon" src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true"></image>
+          </div>
+          <br>
+          <a href="#">
+            <small>Forgot Password?</small>
+          </a><br>
+          <small>New to Programming Hub? <a href="signup.html">Sign Up</a></small>
+          <br><br>
+          <a href="#">
+            <input class="btn btn-primary" type="submit" value="Sign In">
+          </a>
+        </form>
+    </div>
+    <!--Custom Scripts-->
+    <script>
+      document.getElementById('icon').onclick=viewpass;
+        function viewpass(){
+          var temp = document.getElementById('password');
+          if(temp.type=='password'){
+            document.getElementById('icon').src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-slash-fill.svg?raw=true";
+            temp.type='text';
+          }else{
+            document.getElementById('icon').src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true";
+            temp.type='password';
+          }
+        }
+    </script>
+    <!--Bootstrap, JQUERY, Popper script files-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
