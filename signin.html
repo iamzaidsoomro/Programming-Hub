@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -52,22 +52,25 @@
     </ul>
     <div class="container form-control" style="width: 50%;">
       <h1 class="text-primary" style="text-align:center;">Sign In</h1>
-      <form action="post" style="padding: 8%; padding-left: 25%;">
+      <form style="padding: 8%; padding-left: 25%;">
           <label for="email" class="form-label">Email:</label>
           <input style="width:70%;" class="form-control" type="email" id="email" placeholder="Enter Email">
+          <div class="text-danger" id="emailemp" style="display: none;"><small>Field can't be empty</small></div>
+          <div class="text-danger" id="emailinvalid" style="display: none;"><small>Invalid Email</small></div>
           <label for="password">Password:</label>
           <div class="input-group">
             <input class="password form-control" id="password" type="password" placeholder="Enter Password">
             <image id="icon" class="icon" src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true"></image>
           </div>
+          <div class="text-danger" id="passwordemp" style="display: none;"><small>Field can't be empty</small></div>
           <br>
           <a href="#">
             <small>Forgot Password?</small>
           </a><br>
           <small>New to Programming Hub? <a href="signup.html">Sign Up</a></small>
           <br><br>
-          <a href="#">
-            <input class="btn btn-primary" type="submit" value="Sign In">
+          <a id="sublink" href="#">
+            <input type="submit" class="btn btn-primary btn-md" value="Sign In" id="submit">
           </a>
         </form>
     </div>
@@ -84,6 +87,48 @@
             temp.type='password';
           }
         }
+      document.getElementById('submit').onclick=submit;
+      function submit(){
+        var count = 0;
+        var condition = true;
+        if(document.getElementById('email').value == ''){
+                document.getElementById('emailemp').style.display='inherit';
+                condition = false;
+            } else{
+                document.getElementById('emailemp').style.display='none';
+                for(var i=0; i<100; i++){
+                  if(document.getElementById('email').value[i]=='@'||document.getElementById('email').value[i]==' '){
+                    count++;
+                  }
+                }
+                if(count>0&&count<2){
+                  document.getElementById('emailinvalid').style.display='none';
+                } else{
+                  document.getElementById('emailinvalid').style.display='inherit';
+                }
+                console.log(count);
+            }
+        if(document.getElementById('password').value == ''){
+                document.getElementById('passwordemp').style.display='inherit';
+                condition = false;
+            } else{
+                document.getElementById('passwordemp').style.display='none';
+            }
+        if(count!=1||document.getElementById('email').value==''||document.getElementById('email').value==' '||document.getElementById('password').value == ''){
+          condition=false;
+          console.log('condition=false\t\tline 119');
+        } else{
+          condition = true;
+          console.log('condition=true\t\tline 122');
+        }
+        if(condition == true){
+          document.getElementById('sublink').href="index.html";
+          console.log('condition=true\t\tline 126');
+        } else{
+              document.getElementById('sublink').href="#";
+              console.log('condition=false\t\tline 130');
+        }
+      }
     </script>
     <!--Bootstrap, JQUERY, Popper script files-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
