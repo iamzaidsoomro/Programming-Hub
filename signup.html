@@ -121,6 +121,7 @@
                   <image id="icon" class="icon" src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true"></image>
                 </div>
                 <div class="text-danger" id="passwordemp" style="display: none;"><small>Field can't be empty</small></div>
+                <div class="text-danger" id="passwordinvalid" style="display: none;"><small>Password should be 8 characters minimum</small></div>
                 <label for="confirmpassword" class="form-label">Confirm Password:</label>
                 <div class="input-group">  
                   <input id="cpassword" class="form-control" style="width: 70%;" type="password" placeholder="Enter Password">
@@ -449,7 +450,7 @@
             } else{
                 document.getElementById('emailemp').style.display='none';
                 for(var i=0; i<100; i++){
-                  if(document.getElementById('email').value[i]=='@'){
+                  if(document.getElementById('email').value[i]=='@'||document.getElementById('email').value[i]==' '){
                     count++;
                   }
                 }
@@ -487,8 +488,12 @@
             if(document.getElementById('password').value == ''){
                 document.getElementById('passwordemp').style.display='inherit';
                 condition = false;
+            } else if(document.getElementById('password').value.length<8){
+                document.getElementById('passwordinvalid').style.display='inherit';
+                document.getElementById('passwordemp').style.display='none';
             } else{
                 document.getElementById('passwordemp').style.display='none';
+                document.getElementById('passwordinvalid').style.display='none';
             }
             if(document.getElementById('cpassword').value == ''){
                 document.getElementById('cpasswordemp').style.display='inherit';
@@ -514,7 +519,7 @@
             } else{
                 document.getElementById('courseemp').style.display='none';
             }
-            if(document.getElementById('fname').value==''||document.getElementById('lname').value==''||document.getElementById('email').value==''||document.getElementById('contact').value==''||document.getElementById('username').value==''||document.getElementById('age').value==''||document.getElementById('password').value==''||document.getElementById('cpassword').value==''||document.getElementById('country').value==' '||document.getElementById('course').value==' '||count!=1||document.getElementById('password').value!=document.getElementById('cpassword').value){
+            if(document.getElementById('fname').value==''||document.getElementById('lname').value==''||document.getElementById('email').value==''||document.getElementById('contact').value==''||document.getElementById('username').value==''||document.getElementById('age').value==''||document.getElementById('password').value==''||document.getElementById('cpassword').value==''||document.getElementById('country').value==' '||document.getElementById('course').value==' '||count!=1||document.getElementById('password').value!=document.getElementById('cpassword').value||document.getElementById('password').value.length<8){
               condtion=false;
             } else{
               condition=true;
