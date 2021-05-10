@@ -13,11 +13,11 @@
             width: 100%;
             height: 100vh;
             position: fixed;
-            background: white url(https://github.com/iamzaidsoomro/Programming-Hub/blob/main/preloader.gif?raw=true) no-repeat center;
+            background: white url(images/preloader.gif) no-repeat center;
             z-index: 999;
         }
         body{
-          background-image: url(https://github.com/iamzaidsoomro/Programming-Hub/blob/main/signupbg.gif?raw=true);
+          background-image: url(images/signupbg.gif);
           background-repeat: none;
           background-size: cover;
         }
@@ -73,7 +73,7 @@
     <!-- HEADER -->
     <nav class="navbar navbar-light bg-light">
         <div>
-        <img src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/logo.png?raw=true" alt="Logo" width="30" height="24" class="d-inline-block align-text-top logo">
+        <img src="images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top logo">
         <a href="index.html"><span class="navbar-brand mb-0 h1" style="font-size:20px">Programming Hub</span></a>
     </nav>
     <!-- NAV BAR -->
@@ -99,7 +99,7 @@
           <label for="password">Password:</label>
           <div class="input-group" style="width:60%;">
             <input class="password form-control" id="password" type="password" placeholder="Enter Password">
-            <image id="icon" class="icon" src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true"></image>
+            <image id="icon" class="icon" src="images/eye-fill.svg"></image>
           </div>
           <div class="text-danger" id="passwordemp" style="display: none;"><small>Field can't be empty</small></div>
           <br>
@@ -119,10 +119,10 @@
         function viewpass(){
           var temp = document.getElementById('password');
           if(temp.type=='password'){
-            document.getElementById('icon').src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-slash-fill.svg?raw=true";
+            document.getElementById('icon').src="images/eye-slash-fill.svg";
             temp.type='text';
           }else{
-            document.getElementById('icon').src="https://github.com/iamzaidsoomro/Programming-Hub/blob/main/eye-fill.svg?raw=true";
+            document.getElementById('icon').src="images/eye-fill.svg";
             temp.type='password';
           }
         }
