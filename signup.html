@@ -457,7 +457,11 @@
                 document.getElementById('emailemp').style.display='none';
                 for(var i=0; i<100; i++){
                   if(document.getElementById('email').value[i]=='@'||document.getElementById('email').value[i]==' '){
-                    count++;
+                    if(document.getElementById('email').value[i]==' '){
+                      count+=2;
+                    }else{
+                      count++
+                    }
                   }
                 }
                 if(count>0&&count<2){
