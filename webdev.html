@@ -8,6 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
+      #preload{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background: white url(images/preloader.gif) no-repeat center;
+        z-index: 999;
+      }
       .main-jumbo{
         background-image: url(images/webdevbg.jpg);
         background-position: fixed;
@@ -64,7 +71,7 @@
         }
     </style>
   </head>
-  <body>
+  <body onload="pldisp()">
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -230,6 +237,13 @@
           <small>Copyright &copy; 2021 - Programming Hub</small>
         </div>
       </div>
+    <!--Custom JavaScript-->
+    <script>
+        var preload = document.getElementById('preload');
+        function pldisp(){
+            preload.style.display = 'none';
+        }
+    </script>
     <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
