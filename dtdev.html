@@ -16,6 +16,33 @@
         background: white url(images/preloader.gif) no-repeat center;
         z-index: 999;
       }
+      .jumbotron{
+          background-image: url(images/dtdevbg.jpg);
+          background-position: fixed;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 600px;
+          border-radius: 0px;
+      }
+      .main-jumbo{
+        color: #4d4d4d;
+      }
+      .langs{
+        padding: 120px;
+        padding-right: 60px;
+        word-spacing: 150px;
+        justify-content: center;
+      }
+      .img{
+        height: 120px;
+        width: 120px;
+      }
+      .dtdev{
+        background-color: #0d0d0d;
+        color: #e6ac00;
+        padding: 80px;
+        line-height: 1.5em;
+      }
     </style>
   </head>
   <body onload="pldisp()">
@@ -42,6 +69,39 @@
           </nav>
         <small class="text-muted">- Desktop Development</small>
     </nav>
+    <div class="jumbotron">
+        <div class="container main-jumbo">
+          <h1>Desktop Application Development</h1><br>
+          <h3>Learn to build desktop apps on programming hub today!</h3>
+          <br><br>
+          <p><strong>We offer you free courses for learning professional desktop application software. Press the button below to enroll now for free.</strong></p>
+          <br><br>
+          <a href="signup.html">
+            <button class="btn btn-secondary btn-lg">Enroll Now</button>
+          </a>
+        </div>
+    </div>
+    <!--Programming Languages-->
+    <div class="container langs">
+      <img src="images/cpplogo.png" class="rounded img" alt="...">
+      <img src="images/javalogo.png" class="rounded img" alt="...">
+      <img src="images/vslogo.png" class="rounded img" alt="...">
+      <img src="images/dotnetlogo.png" class="rounded img" alt="...">
+    </div>
+    <!--What is dt development-->
+    <div class="fluid-jumbotron dtdev">
+      <div class="container">
+        <h1>What is a Desktop Application?</h1><br><br><br>
+        <p>A Desktop application means any software that can be installed on a single computer (laptop or a desktop) and used to perform specific tasks.</p>
+        <br><h5>Examples of Desktop Application Software</h5><br>
+        <ul>
+          <li>Adobe Photoshop</li>
+          <li>MS Teams</li>
+          <li>VS Code</li>
+          <li>Opera</li>
+        </ul>
+      </div>
+    </div>
     <!--Custom Script-->
     <script>
         var preload = document.getElementById('preload');
