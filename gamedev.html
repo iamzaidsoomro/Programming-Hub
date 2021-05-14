@@ -9,6 +9,13 @@
     <link rel="icon" href="images/logo.png">
     <title>Programming Hub</title>
     <style>
+        #preload{
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            background: white url(images/preloader.gif) no-repeat center;
+            z-index: 999;
+        }
         .main-jumbo{
             background-image: url(images/gamedevbg.jpg);
             background-repeat: no-repeat;
@@ -23,7 +30,6 @@
             background-image: url(images/gtavwallpaper.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            height: 100vh;
             color: #f2f2f2;
             padding: 10%;
         }
@@ -75,7 +81,9 @@
         }
     </style>
   </head>
-  <body>
+  <body onload="pldisp()">
+    <!-- PRELOADER -->
+    <div id="preload"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">
@@ -105,7 +113,7 @@
                 <h1>Videogame Development</h1><br><br><br>
                 Everyone is playing videogames in this era, everyone loves different genres of videogames. Some like battle royale, others action and adventure, some also spend their time by playing sports genre videogames. The demand of videogames is increasing, hence, the videogame developer's demand is also increasing. <br> You can also become a videogame developer by registering at this website for free. Hurry up! learn, practice, and develop great games and earn good money.
                 <br><br><br>
-                <a href="signup.html"><button class="btn btn-success btn-lg">Register</button></a>
+                <a href="signup.html"><button class="btn btn-outline-warning btn-lg">Register</button></a>
             </div>
         </div>
     </div>
@@ -128,41 +136,41 @@
             </div>
             <br><br>
             <div class="container faq col-md-5">
-                <strong class="text-light">Q: Which languages are used in videogame development?</strong>
-                <p class="text-info"><i>ANS: C++, JavaScript, Python are the most popular languages used in game development.</i></p>
+                <strong class="text-light">Q: What is a game engine?</strong>
+                <p class="text-info"><i>ANS: It is an environment provided to the game developer for the development and testing of a game.</i></p>
             </div>
         </div>
         <br><br>
-        <div class="row">
+        <div class="row cont">
             <div class="container faq col-md-5">
-                <strong class="text-light">Q: Which languages are used in videogame development?</strong>
-                <p class="text-info"><i>ANS: C++, JavaScript, Python are the most popular languages used in game development.</i></p>
+                <strong class="text-light">Q: How can we develop games in python?</strong>
+                <p class="text-info"><i>ANS: There's a library in python, which is called pygame. This library is used to create videogames.</i></p>
             </div>
             <div class="container faq col-md-5">
-                <strong class="text-light">Q: Which languages are used in videogame development?</strong>
-                <p class="text-info"><i>ANS: C++, JavaScript, Python are the most popular languages used in game development.</i></p>
-            </div>
-        </div>
-        <br><br>
-        <div class="row">
-            <div class="container faq col-md-5">
-                <strong class="text-light">Q: Which languages are used in videogame development?</strong>
-                <p class="text-info"><i>ANS: C++, JavaScript, Python are the most popular languages used in game development.</i></p>
-            </div>
-            <div class="container faq col-md-5">
-                <strong class="text-light">Q: Which languages are used in videogame development?</strong>
-                <p class="text-info"><i>ANS: C++, JavaScript, Python are the most popular languages used in game development.</i></p>
+                <strong class="text-light">Q: Which language is used in Unreal Engine?</strong>
+                <p class="text-info"><i>ANS: C++.</i></p>
             </div>
         </div>
         <br><br>
-        <div class="row">
+        <div class="row cont">
             <div class="container faq col-md-5">
-                <strong class="text-light">Q: Which languages are used in videogame development?</strong>
-                <p class="text-info"><i>ANS: C++, JavaScript, Python are the most popular languages used in game development.</i></p>
+                <strong class="text-light">Q: How are 3d game models made?</strong>
+                <p class="text-info"><i>ANS: There are soem high-end animation software like Autodesk, these type of software are used to create 3d models in a game.</i></p>
             </div>
             <div class="container faq col-md-5">
-                <strong class="text-light">Q: Which languages are used in videogame development?</strong>
-                <p class="text-info"><i>ANS: C++, JavaScript, Python are the most popular languages used in game development.</i></p>
+                <strong class="text-light">Q: Who are game designers?</strong>
+                <p class="text-info"><i>ANS: The game designers work with the creative aspects of a videogame for example story, dialogues etc.</i></p>
+            </div>
+        </div>
+        <br><br>
+        <div class="row cont">
+            <div class="container faq col-md-5">
+                <strong class="text-light">Q: What is the difference between a game developer and a game designer?</strong>
+                <p class="text-info"><i>ANS: A videogame designer is the one who deals with the creative aspects of the game while a developer actually implement the ideas through coding.</i></p>
+            </div>
+            <div class="container faq col-md-5">
+                <strong class="text-light">Q: Who is a game tester?</strong>
+                <p class="text-info"><i>ANS: A games tester is the guy who works for video game production companies to thoroughly test video games before the final version is released to the public.</i></p>
             </div>
         </div>
     </div>
@@ -187,7 +195,7 @@
               <span style="font-size: 14px;">+92-3443714148</span>
             </i>
             <br>
-            <small class="text-muted"><a class="ft-link" href="#">Videogame Development</a></small>
+            <small class="text-muted"><a class="ft-link" href="gamedev.html">Videogame Development</a></small>
             <!-- SOCIAL MEDIA LINKS -->
             <a href="https://web.facebook.com/ZaidAhmedSoomro7/" style="color: currentColor;">
               <i style="padding-left: 26%;" class="bi bi-facebook">
@@ -243,6 +251,12 @@
           </div>
         </div>
       </div>
+      <script>
+        var preload = document.getElementById('preload');
+        function pldisp(){
+            preload.style.display = 'none';
+        }
+      </script>
     <!--Bootstrap JS and Popper JS-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
