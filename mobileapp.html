@@ -8,6 +8,13 @@
     <link rel="icon" href="images/logo.png">
     <title>Programming Hub</title>
     <style>
+      #preload{
+        width: 100%;
+        height: 100vh;
+        background: white url(images/preloader.gif) no-repeat center;
+        position: fixed;
+        z-index: 999;
+      }
       .main-jumbo{
         border-radius: 0px;
         background-image: url(images/appdevbg.jpg);
@@ -78,7 +85,8 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="pldisp()">
+    <div id="preload"></div>
     <!-- Image and text -->
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="index.html">
